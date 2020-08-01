@@ -32,7 +32,7 @@ if (strlen($_SESSION['login']) == 0) {
             move_uploaded_file($_FILES["postimage"]["tmp_name"], "postimages/" . $imgnewfile);
 
             $status = 1;
-            $query = mysqli_query($con, "insert into tblposts(PostTitle,CategoryId,SubCategoryId,PostDetails,PostUrl,Is_Active,PostImage) values('$posttitle','$catid','$subcatid','$postdetails','$url','$status','$imgnewfile')");
+            $query = mysqli_query($con, "insert into tblposts(PostTitle,CategoryId,SubCategoryId,PostDetails,PostUrl,Is_Active,PostImage) values(n'$posttitle','$catid','$subcatid','$postdetails','$url','$status','$imgnewfile')");
             if ($query) {
                 $msg = "Bài viết được thêm thành công !";
             } else {

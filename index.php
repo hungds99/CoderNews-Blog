@@ -64,14 +64,27 @@ include('includes/config.php');
             <img class="card-img-top" src="admin/postimages/<?php echo htmlentities($row['PostImage']); ?>" alt="<?php echo htmlentities($row['posttitle']); ?>">
             <div class="card-body">
               <h2 class="card-title"><?php echo htmlentities($row['posttitle']); ?></h2>
-              <p><b>Category : </b> <a href="category.php?catid=<?php echo htmlentities($row['cid']) ?>"><?php echo htmlentities($row['category']); ?></a> </p>
+              <p style="font-size: 12px;"><em>Danh mục : </em> <a href="category.php?catid=<?php echo htmlentities($row['cid']) ?>"><?php echo htmlentities($row['category']); ?></a> || <em>Ngày đăng :</em> <?php echo htmlentities($row['postingdate']); ?> </p>
+        
+              <p><?php
+                  $string = $row['postdetails'];
 
-              <a href="news-details.php?nid=<?php echo htmlentities($row['pid']) ?>" class="btn btn-primary">Read More &rarr;</a>
-            </div>
-            <div class="card-footer text-muted">
-              Posted on <?php echo htmlentities($row['postingdate']); ?>
+                  $string = strip_tags($string);
+                  if (strlen($string) > 500) {
 
+                    // truncate string
+                    $stringCut = substr($string, 0, 500);
+                    $endPoint = strrpos($stringCut, ' ');
+
+                    //if the string doesn't contain any space then it will cut without word basis.
+                    $string = $endPoint ? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
+                    $string .= "... <a href='news-details.php?nid=" . $row['pid'] . "'>Đọc tiếp</a>";
+                  }
+                  echo $string;
+
+                  ?></p>
             </div>
+           
           </div>
         <?php } ?>
 

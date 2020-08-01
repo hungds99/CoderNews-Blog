@@ -106,7 +106,7 @@ if (strlen($_SESSION['login']) == 0) {
                             <a href="manage-subcategories.php">
                                 <div class="col-lg-4 col-md-4 col-sm-6">
                                     <div class="card-box widget-box-one">
-                                        <i class="mdi mdi-layers widget-one-icon"></i>
+                                        <i class="mdi mdi-stackexchange widget-one-icon"></i>
                                         <div class="wigdet-one-content">
                                             <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="User This Month">Tổng danh mục con</p>
                                             <?php 
@@ -146,7 +146,7 @@ if (strlen($_SESSION['login']) == 0) {
                             <a href="trash-posts.php">
                                 <div class="col-lg-4 col-md-4 col-sm-6">
                                     <div class="card-box widget-box-one">
-                                        <i class="mdi mdi-layers widget-one-icon"></i>
+                                        <i class="mdi mdi-delete widget-one-icon"></i>
                                         <div class="wigdet-one-content">
                                             <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="User This Month">Tổng bài viết bị xóa</p>
                                             <?php 

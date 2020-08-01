@@ -14,11 +14,14 @@ if (strlen($_SESSION['login']) == 0) {
         $url = implode("-", $arr);
         $status = 1;
         $postid = intval($_GET['pid']);
+        
         $query = mysqli_query($con, "update tblposts set PostTitle='$posttitle',CategoryId='$catid',SubCategoryId='$subcatid',PostDetails='$postdetails',PostUrl='$url',Is_Active='$status' where id='$postid'");
+        
         if ($query) {
             $msg = "Bài viết đã được cập nhật !";
         } else {
             $error = "Có lỗi . Vui lòng thử lại !";
+            // $error = $query;
         }
     }
 ?>

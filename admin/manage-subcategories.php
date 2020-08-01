@@ -73,10 +73,7 @@ if (strlen($_SESSION['login']) == 0) {
                                     <h4 class="page-title">Quản lý danh mục con</h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
-                                            <a href="#">Quản lý</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Danh mục con</a>
+                                            <a href="dashboard.php">Bảng điều khiển</a>
                                         </li>
                                         <li class="active">
                                             Quản lý danh mục con

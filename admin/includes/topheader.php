@@ -2,7 +2,7 @@
 
                 <!-- LOGO -->
                 <div class="topbar-left">
-                    <a href="index.html" class="logo"><span>CODER<span>NEWS</span></span><i class="mdi mdi-layers"></i></a>
+                    <a href="dashboard.php" class="logo"><span>CODER<span>NEWS</span></span><i class="mdi mdi-layers"></i></a>
                 </div>
 
                 <!-- Button mobile view to collapse sidebar menu -->
