@@ -1,6 +1,5 @@
 <?php
-include('includes/config.php');
-
+	include('includes/config.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +11,7 @@ include('includes/config.php');
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>News Portal | About us</title>
+    <title>Coder News | Giới thiệu</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,32 +26,28 @@ include('includes/config.php');
     <!-- Navigation -->
     <?php include('includes/header.php');?>
     <!-- Page Content -->
-    <div class="container">
+    <div class="container" style="height: 100vh;">
 
-<?php 
-$pagetype='aboutus';
-$query=mysqli_query($con,"select PageTitle,Description from tblpages where PageName='$pagetype'");
-while($row=mysqli_fetch_array($query))
-{
-
-?>
-      <h1 class="mt-4 mb-3"><?php echo htmlentities($row['PageTitle'])?>
-  
-      </h1>
+	<?php 
+		$pagetype='aboutus';
+		$query=mysqli_query($con,"select PageTitle,Description from tblpages where PageName='$pagetype'");
+		while($row=mysqli_fetch_array($query))
+		{
+	?>
+      <h5 class="mt-4 mb-3"><?=$row['PageTitle']?></h5>
 
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.php">Home</a>
+          <a href="index.php">Trang chủ</a>
         </li>
-        <li class="breadcrumb-item active">About</li>
+        <li class="breadcrumb-item active">Giới thiệu</li>
       </ol>
 
       <!-- Intro Content -->
       <div class="row">
 
         <div class="col-lg-12">
-
-          <p><?php echo $row['Description'];?></p>
+          <p class="m-0 p-0"><?=$row['Description']?></p>
         </div>
       </div>
       <!-- /.row -->

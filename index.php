@@ -14,7 +14,7 @@ include('includes/config.php');
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>News Portal | Home Page</title>
+  <title>Coder News | Trang chủ</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -32,12 +32,10 @@ include('includes/config.php');
   <!-- Page Content -->
   <div class="container">
 
-
-
     <div class="row" style="margin-top: 4%">
 
       <!-- Blog Entries Column -->
-      <div class="col-md-8">
+      <div class="col-9">
 
         <!-- Blog Post -->
         <?php
@@ -46,7 +44,7 @@ include('includes/config.php');
         } else {
           $pageno = 1;
         }
-        $no_of_records_per_page = 8;
+        $no_of_records_per_page = 3;
         $offset = ($pageno - 1) * $no_of_records_per_page;
 
 
@@ -60,11 +58,14 @@ include('includes/config.php');
         while ($row = mysqli_fetch_array($query)) {
         ?>
 
-          <div class="card mb-4">
-            <img class="card-img-top" src="admin/postimages/<?php echo htmlentities($row['PostImage']); ?>" alt="<?php echo htmlentities($row['posttitle']); ?>">
+          <div class="row">
+            <div class="col-3">
+              <img src="admin/postimages/<?=$row['PostImage']?>" alt="<?=$row['posttitle']?>" width=200 heigh=200>
+            </div>
+            <div class="col-9">
             <div class="card-body">
-              <h2 class="card-title"><?php echo htmlentities($row['posttitle']); ?></h2>
-              <p style="font-size: 12px;"><em>Danh mục : </em> <a href="category.php?catid=<?php echo htmlentities($row['cid']) ?>"><?php echo htmlentities($row['category']); ?></a> || <em>Ngày đăng :</em> <?php echo htmlentities($row['postingdate']); ?> </p>
+              <h2 class="card-title"><?=$row['posttitle']?></h2>
+              <p style="font-size: 12px;"><em>Danh mục : </em> <a href="category.php?catid=<?=$row['cid']?>"><?=$row['category']?></a> || <em>Ngày đăng :</em> <?=$row['postingdate']?> </p>
         
               <p><?php
                   $string = $row['postdetails'];
@@ -84,7 +85,7 @@ include('includes/config.php');
 
                   ?></p>
             </div>
-           
+            </div>
           </div>
         <?php } ?>
 
@@ -95,7 +96,7 @@ include('includes/config.php');
 
 
         <ul class="pagination justify-content-center mb-4">
-          <li class="page-item"><a href="?pageno=1" class="page-link">First</a></li>
+          <li class="page-item"><a href="?pageno=1" class="page-link">Trang đầu</a></li>
           <li class="<?php if ($pageno <= 1) {
                         echo 'disabled';
                       } ?> page-item">
@@ -103,7 +104,7 @@ include('includes/config.php');
                         echo '#';
                       } else {
                         echo "?pageno=" . ($pageno - 1);
-                      } ?>" class="page-link">Prev</a>
+                      } ?>" class="page-link">Lùi</a>
           </li>
           <li class="<?php if ($pageno >= $total_pages) {
                         echo 'disabled';
@@ -112,9 +113,9 @@ include('includes/config.php');
                         echo '#';
                       } else {
                         echo "?pageno=" . ($pageno + 1);
-                      } ?> " class="page-link">Next</a>
+                      } ?> " class="page-link">Tiếp</a>
           </li>
-          <li class="page-item"><a href="?pageno=<?php echo $total_pages; ?>" class="page-link">Last</a></li>
+          <li class="page-item"><a href="?pageno=<?php echo $total_pages; ?>" class="page-link">Trang cuối</a></li>
         </ul>
 
       </div>

@@ -12,7 +12,7 @@ include('includes/config.php');
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>News Portal | Contact us</title>
+  <title>Coder News | Liên hệ</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@ include('includes/config.php');
   <!-- Navigation -->
   <?php include('includes/header.php'); ?>
   <!-- Page Content -->
-  <div class="container">
+  <div class="container" style="height: 100vh;">
 
     <?php
     $pagetype = 'contactus';
@@ -35,15 +35,15 @@ include('includes/config.php');
     while ($row = mysqli_fetch_array($query)) {
 
     ?>
-      <h1 class="mt-4 mb-3"><?php echo htmlentities($row['PageTitle']) ?>
+      <h1 class="mt-4 mb-3"><?=$row['PageTitle']?>
 
       </h1>
 
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.php">Home</a>
+          <a href="index.php">Trang chủ</a>
         </li>
-        <li class="breadcrumb-item active">Contact</li>
+        <li class="breadcrumb-item active">Liên hệ</li>
       </ol>
 
       <!-- Intro Content -->
@@ -51,7 +51,7 @@ include('includes/config.php');
 
         <div class="col-lg-12">
 
-          <p><?php echo $row['Description']; ?></p>
+          <p><?=$row['Description']?></p>
         </div>
       </div>
       <!-- /.row -->

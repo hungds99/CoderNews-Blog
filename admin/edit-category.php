@@ -9,7 +9,11 @@ if (strlen($_SESSION['login']) == 0) {
         $catid = intval($_GET['cid']);
         $category = $_POST['category'];
         $description = $_POST['description'];
-        $query = mysqli_query($con, "Update  tblcategory set CategoryName='$category',Description='$description' where id='$catid'");
+
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
+        $updationDate = date('Y-m-d H:i:s');
+
+        $query = mysqli_query($con, "Update  tblcategory set CategoryName='$category', UpdationDate='$updationDate', Description='$description' where id='$catid'");
         if ($query) {
             $msg = "Cập nhật danh mục thành công !";
         } else {
