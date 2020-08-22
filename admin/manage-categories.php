@@ -21,7 +21,12 @@ if (strlen($_SESSION['login']) == 0) {
     if ($_GET['action'] == 'parmdel' && $_GET['rid']) {
         $id = intval($_GET['rid']);
         $query = mysqli_query($con, "delete from  tblcategory  where id='$id'");
-        $delmsg = "Danh mục đã bị xóa vĩnh viễn !";
+
+        if ($query) {
+            $delmsg = "Danh mục đã bị xóa vĩnh viễn !";
+        } else {
+            $delmsg = "Danh mục đang được sử dụng. Vui lòng kiểm tra lại !";
+        }
     }
 
 ?>

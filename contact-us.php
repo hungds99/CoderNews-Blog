@@ -24,10 +24,10 @@ include('includes/config.php');
 
 <body>
 
-  <!-- Navigation -->
-  <?php include('includes/header.php'); ?>
-  <!-- Page Content -->
-  <div class="container" style="height: 100vh;">
+	<!-- Navigation -->
+	<?php include('includes/header.php'); ?>
+	<!-- Page Content -->
+  	<div class="container" style="height: 100vh;">
 
     <?php
     $pagetype = 'contactus';
@@ -35,37 +35,35 @@ include('includes/config.php');
     while ($row = mysqli_fetch_array($query)) {
 
     ?>
-      <h1 class="mt-4 mb-3"><?=$row['PageTitle']?>
+        <h1 class="mt-4 mb-3"><?=$row['PageTitle']?>
 
-      </h1>
+        </h1>
 
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="index.php">Trang chủ</a>
-        </li>
-        <li class="breadcrumb-item active">Liên hệ</li>
-      </ol>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="index.php">Trang chủ</a>
+          </li>
+          <li class="breadcrumb-item active">Liên hệ</li>
+        </ol>
 
-      <!-- Intro Content -->
-      <div class="row">
-
-        <div class="col-lg-12">
-
-          <p><?=$row['Description']?></p>
+        <!-- Intro Content -->
+        <div class="row">
+          <div class="col-lg-12">
+            <p><?=$row['Description']?></p>
+          </div>
         </div>
-      </div>
       <!-- /.row -->
     <?php } ?>
 
-  </div>
+  	</div>
   <!-- /.container -->
 
   <!-- Footer -->
-  <?php include('includes/footer.php'); ?>
+	<?php include('includes/footer.php'); ?>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  	<script src="vendor/jquery/jquery.min.js"></script>
+  	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

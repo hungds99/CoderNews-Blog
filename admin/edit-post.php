@@ -21,7 +21,6 @@ if (strlen($_SESSION['login']) == 0) {
             $msg = "Bài viết đã được cập nhật !";
         } else {
             $error = "Có lỗi . Vui lòng thử lại !";
-            // $error = $query;
         }
     }
 ?>

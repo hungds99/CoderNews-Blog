@@ -10,6 +10,7 @@ if (strlen($_SESSION['login']) == 0) {
         $query = mysqli_query($con, "update tblsubcategory set Is_Active='0' where SubCategoryId='$id'");
         $msg = "Danh mục đã bị xóa !";
     }
+
     // Code for restore
     if ($_GET['resid']) {
         $id = intval($_GET['resid']);
@@ -21,7 +22,13 @@ if (strlen($_SESSION['login']) == 0) {
     if ($_GET['action'] == 'perdel' && $_GET['scid']) {
         $id = intval($_GET['scid']);
         $query = mysqli_query($con, "delete from tblsubcategory where SubCategoryId='$id'");
-        $delmsg = "Danh mục bị xóa vĩnh viễn";
+
+        if ($query) {
+            $delmsg = "Danh mục bị xóa vĩnh viễn !";
+        } else {
+            $delmsg = "Danh mục đang được sử dụng. Vui lòng kiểm tra lại !";
+        }
+        
     }
 
 ?>
@@ -56,8 +63,6 @@ if (strlen($_SESSION['login']) == 0) {
             <?php include('includes/leftsidebar.php'); ?>
             <!-- Left Sidebar End -->
 
-
-
             <!-- ============================================================== -->
             <!-- Start right Content here -->
             <!-- ============================================================== -->
@@ -65,7 +70,6 @@ if (strlen($_SESSION['login']) == 0) {
                 <!-- Start content -->
                 <div class="content">
                     <div class="container">
-
 
                         <div class="row">
                             <div class="col-xs-12">
@@ -85,7 +89,6 @@ if (strlen($_SESSION['login']) == 0) {
                         </div>
                         <!-- end row -->
 
-
                         <div class="row">
                             <div class="col-sm-6">
 
@@ -100,7 +103,6 @@ if (strlen($_SESSION['login']) == 0) {
                                         <strong><?php echo htmlentities($delmsg); ?></strong>
                                     </div>
                                 <?php } ?>
-
 
                             </div>
 
@@ -145,7 +147,6 @@ if (strlen($_SESSION['login']) == 0) {
                                                             while ($row = mysqli_fetch_array($query)) {
                                                             ?>
 
-
                                                         <tr>
                                                             <th scope="row"><?php echo htmlentities($cnt); ?></th>
                                                             <td><?php echo htmlentities($row['catname']); ?></td>
@@ -165,26 +166,18 @@ if (strlen($_SESSION['login']) == 0) {
                                             </table>
                                         </div>
 
-
-
-
                                     </div>
 
                                 </div>
 
-
                             </div>
                             <!--- end row -->
-
-
 
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="demo-box m-t-20">
                                         <div class="m-b-30">
-
                                             <h4><i class="fa fa-trash-o"></i> Danh mục con đã xóa</h4>
-
                                         </div>
 
                                         <div class="table-responsive">
