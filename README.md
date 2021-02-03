@@ -1,4 +1,6 @@
 # Trang tin tức công nghệ
+   :bulb: Đồ án môn lập trình mã nguồn mở 
+   :sparkles: GVHD: Nguyễn Đức Long
 
 ## Demo: 
    Truy cập trang tại: https://coder-news.000webhostapp.com/index.php
