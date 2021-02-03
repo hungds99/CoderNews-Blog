@@ -1,7 +1,12 @@
-# CoderNews-Blog
-Project With PHP - MySQL
+# Trang tin tức công nghệ
 
-# Login: 
-  https://coder-news.000webhostapp.com/index.php?c=Admin&a=LoginPage
-  username: admin
-  password: Test@123456
+## Công nghệ sử dụng:
+  * HTML-CSS-Javascript
+  * PHP
+  * MySQL
+  * XAMPP
+
+## Truy cập trang quản trị: 
+  - Đường dẫn: https://coder-news.000webhostapp.com/index.php?c=Admin&a=LoginPage
+    * Tên đăng nhập: admin
+    * Mật khẩu: Test@123456
